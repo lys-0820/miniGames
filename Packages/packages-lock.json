@@ -1,10 +1,11 @@
 {
   "dependencies": {
     "com.dbrizov.naughtyattributes": {
-      "version": "file:NaughtyAttributes/Assets/NaughtyAttributes",
+      "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "8a8fa5a9659a6d63f196391c71e06c4286c8acd7"
     },
     "com.unity.2d.animation": {
       "version": "9.1.1",
@@ -273,10 +274,11 @@
       "url": "https://packages.unity.cn"
     },
     "com.videojogoslusofona.okapikit": {
-      "version": "file:OkapiKit/Assets/OkapiKit",
+      "version": "https://github.com/VideojogosLusofona/OkapiKit.git#upm",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "e15be2905a63d06e605deec58a119e0d393d1b67"
     },
     "com.videojogoslusofona.okapikit.samples": {
       "version": "https://github.com/VideojogosLusofona/OkapiKit.git#samples",

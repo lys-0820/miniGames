@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.dbrizov.naughtyattributes": "file:NaughtyAttributes/Assets/NaughtyAttributes",
+    "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.rider": "3.0.28",
@@ -11,7 +11,7 @@
     "com.unity.timeline": "1.7.6",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.4",
-    "com.videojogoslusofona.okapikit": "file:OkapiKit/Assets/OkapiKit",
+    "com.videojogoslusofona.okapikit": "https://github.com/VideojogosLusofona/OkapiKit.git#upm",
     "com.videojogoslusofona.okapikit.samples": "https://github.com/VideojogosLusofona/OkapiKit.git#samples",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
