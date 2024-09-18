@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4044488102903698386
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1303708191817493359, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: _explanation
+      value: "When this object is created:\n          set the Y position of object
+        Cactus2 Variant to -121.\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357823831120232484, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: _explanation
+      value: 'Follows a path tagged with [TagEnemyPath], at 200 units per second.
+
+        If
+        multiple paths have the [TagEnemyPath] tag, a random one is selected.
+
+        The
+        path will be relative to the initial position of the object.
+
+        The
+        object will align it''s X axis to the path direction, flipping along that
+        axis if the path reverses direction.
+
+        It will turn at a maximum rate
+        of 90 degrees per second.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463686118925282817, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: _explanation
+      value: Spawns prefab Explosion at the position of this object (Cactus2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 24.999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 46.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 24.999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -129.9714
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -234.5656
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966598, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920506269660966603, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: m_Name
+      value: Cactus2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330960564530668071, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: _explanation
+      value: Disables component Cactus2 Variant (UnityEngine.CapsuleCollider2D)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631165769073217567, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: positionY.x
+      value: -121
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631165769073217567, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: positionY.y
+      value: -121
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631165769073217567, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: _explanation
+      value: Set the Y position of object Cactus2 Variant to -121.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977402804195159703, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
+      propertyPath: _explanation
+      value: "When a collision with a trigger with tags [TagLeftBoundaryBackground]
+        starts:\n At 1 seconds, \n          destroys this object\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 648f051a256f9ff4085e3809a9360a10, type: 3}
