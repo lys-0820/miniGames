@@ -6,32 +6,31 @@ public class ShakeChampagne : MonoBehaviour
     private Vector3 originalPosition;
     public float shakeAmount = 0.1f;
     public float shakeDuration = 0.2f;
-    public GameObject bottleCap; // ÒıÓÃÆ¿¸Ç×ÓÎïÌå
-    public Vector2 capEjectForce = new Vector2(0, 500f); // Æ¿¸ÇÅç³öµÄÁ¦
-    public float capSpinTorque = 200f; // Æ¿¸ÇĞı×ªµÄÁ¦¾Ø
-    public static int clickCount = 0; // ÉèÎªÈ«¾Ö¾²Ì¬±äÁ¿
-    private bool capEjected = false; // Æ¿¸ÇÊÇ·ñÒÑÅç³ö
-
+    public GameObject bottleCap; // é¦™æ§Ÿç“¶ç›–çš„æ¸¸æˆå¯¹è±¡
+    public Vector2 capEjectForce = new Vector2(0, 500f); // ç“¶ç›–å¼¹å‡ºçš„åŠ›
+    public float capSpinTorque = 200f; // ç“¶ç›–æ—‹è½¬çš„æ‰­çŸ©
+    public static int clickCount = 0; // ä½œä¸ºå…¨å±€é™æ€å˜é‡
+    private bool capEjected = false; // ç“¶ç›–æ˜¯å¦å·²å¼¹å‡º
 
     private void Start()
     {
-        // ¼ÇÂ¼Æ¿×Ó×î³õµÄÎ»ÖÃ
+        // è®°å½•ç“¶å­çš„åˆå§‹ä½ç½®
         originalPosition = transform.localPosition;
     }
 
     private void OnMouseDown()
     {
-        // Ã¿´Îµã»÷Ê±Ôö¼Óµã»÷´ÎÊı
+        // æ¯æ¬¡ç‚¹å‡»æ—¶å¢åŠ ç‚¹å‡»æ¬¡æ•°
         clickCount++;
 
-        // Èç¹ûµã»÷´ÎÊıÉÙÓÚ50´Î£¬¼ÌĞø»Î¶¯
-        if (clickCount < 10)
+        // å¦‚æœç‚¹å‡»æ¬¡æ•°å°‘äº20æ¬¡ï¼Œç»§ç»­æ‘‡æ™ƒ
+        if (clickCount < 20)
         {
             StartCoroutine(Shake());
         }
 
-        // µ±µã»÷´ÎÊı´ïµ½50´Î²¢ÇÒÆ¿¸ÇÉĞÎ´Åç³öÊ±£¬Åç³öÆ¿¸Ç
-        if (clickCount >= 10 && !capEjected)
+        // å¦‚æœç‚¹å‡»æ¬¡æ•°è¾¾åˆ°20æ¬¡ä¸”ç“¶ç›–æœªå¼¹å‡ºï¼Œåˆ™å¼¹å‡ºç“¶ç›–
+        if (clickCount >= 20 && !capEjected)
         {
             EjectCap();
         }
@@ -43,40 +42,39 @@ public class ShakeChampagne : MonoBehaviour
 
         while (elapsedTime < shakeDuration)
         {
-            // Ëæ»ú²úÉúÒ»¸ö»Î¶¯µÄÎ»ÖÃ
+            // ç”Ÿæˆä¸€ä¸ªéšæœºæ‘‡æ™ƒä½ç½®
             Vector3 randomPoint = originalPosition + Random.insideUnitSphere * shakeAmount;
-            randomPoint.z = originalPosition.z;  // ±£³ÖZÖá²»±ä
+            randomPoint.z = originalPosition.z;  // ä¿æŒZè½´ä¸å˜
 
-            // ¸üĞÂÆ¿×ÓµÄÎ»ÖÃ
+            // æ›´æ–°ç“¶å­çš„ä½ç½®
             transform.localPosition = randomPoint;
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // »Ö¸´Æ¿×ÓµÄÔ­Ê¼Î»ÖÃ
+        // æ¢å¤ç“¶å­çš„åŸå§‹ä½ç½®
         transform.localPosition = originalPosition;
     }
 
     private void EjectCap()
     {
-        // Æ¿¸ÇÅç³ö
+        // ç“¶ç›–å¼¹å‡º
         if (bottleCap != null)
         {
-            
             Rigidbody2D rb = bottleCap.GetComponent<Rigidbody2D>();
             
             if (rb != null)
             {
                 rb.gravityScale = 1.0F;
-                // Ìí¼ÓÏòÉÏµÄÁ¦ºÍÉÔÎ¢ÏòÓÒµÄË®Æ½Á¦£¬ÈÃÆ¿¸ÇÅç³ö
+                // æ–½åŠ å‘ä¸Šçš„åŠ›ï¼Œå¹¶ç¨å¾®å‘å³çš„æ°´å¹³åŠ›ä½¿ç“¶ç›–å¼¹å‡º
                 rb.AddForce(capEjectForce);
 
-                // Ìí¼ÓĞı×ªÁ¦¾Ø£¬ÈÃÆ¿¸ÇÔÚÅç³öÊ±Ğı×ª
+                // æ·»åŠ æ—‹è½¬æ‰­çŸ©ï¼Œä½¿ç“¶ç›–åœ¨å¼¹å‡ºæ—¶æ—‹è½¬
                 rb.AddTorque(capSpinTorque);
             }
         }
 
-        capEjected = true; // ±ê¼ÇÆ¿¸ÇÒÑÅç³ö
+        capEjected = true; // æ ‡è®°ç“¶ç›–å·²å¼¹å‡º
     }
 }
