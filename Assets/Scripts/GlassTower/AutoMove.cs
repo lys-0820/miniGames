@@ -84,6 +84,7 @@ public class AutoMove : MonoBehaviour
                     GlassManager.Instance.SetWinCondition(false);
                     GlassManager.Instance.SetGameOverCondition(true);
                     GlassManager.Instance.ClearObject();
+                    GameTimer.Instance.MarkGameAsFailure();
                 }
             }
             else if (collision.gameObject.CompareTag("Table"))

@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/OkapiExamples/Pong/Pong.unity
     guid: 5e32213570a06b94ab9d219bef416dc3
   - enabled: 1
+    path: Assets/Scenes/GlassTowerRoom.unity
+    guid: 34707b2e5f8cabd4c9f9c53f6f787a5b
+  - enabled: 1
     path: Assets/Scenes/Champagne.unity
     guid: 4081371bf3e641a47ad814be990e4514
   - enabled: 1

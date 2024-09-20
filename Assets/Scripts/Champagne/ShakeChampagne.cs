@@ -17,9 +17,13 @@ public class ShakeChampagne : MonoBehaviour
         // 记录瓶子的初始位置
         originalPosition = transform.localPosition;
     }
-
+    private void OnEnable()
+    {
+        clickCount = 0;
+    }
     private void OnMouseDown()
     {
+
         // 每次点击时增加点击次数
         clickCount++;
 
@@ -33,6 +37,7 @@ public class ShakeChampagne : MonoBehaviour
         if (clickCount >= 20 && !capEjected)
         {
             EjectCap();
+            GameTimer.Instance.MarkGameAsSuccess();
         }
     }
 

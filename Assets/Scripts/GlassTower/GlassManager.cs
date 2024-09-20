@@ -49,8 +49,10 @@ public class GlassManager : MonoBehaviour
                 Debug.Log("游戏胜利！所有物体都已成功堆叠。");
                 isWin = true;
                 isGameOver = true;
+                GameTimer.Instance.MarkGameAsSuccess();
             }
         }
+
     }
     public bool GetWinCondition()
     {

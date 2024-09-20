@@ -16,13 +16,13 @@ MonoBehaviour:
   _explanation: 'Defines a global variable of type float, with a default value 0.
 
     Currently
-    it holds the value 10.
+    it holds the value 20.
 
-    It''s limited between 0 and 10.'
+    It''s limited between 0 and 20.'
   description: 
   _type: 1
-  _currentValue: 10
+  _currentValue: 20
   _defaultValue: 0
   _hasLimits: 1
   _minValue: 0
-  _maxValue: 10
+  _maxValue: 20
