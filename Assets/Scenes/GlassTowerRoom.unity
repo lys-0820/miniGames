@@ -701,11 +701,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!4 &1418035947 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7881519925594484132, guid: 0acdedba7267da44c82239428da7acae, type: 3}
-  m_PrefabInstance: {fileID: 6001472744318132842}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1467419235
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +732,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1418035947}
+  - {fileID: 6001472744318132843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -817,13 +812,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1485748904}
-  - component: {fileID: 1485748905}
   - component: {fileID: 1485748906}
   - component: {fileID: 1485748907}
   - component: {fileID: 1485748908}
   m_Layer: 0
   m_Name: glass
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -843,24 +837,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1485748905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485748901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0bd824d936fba4e8c7aa5efb65e8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  leftBoundary: -7.5
-  rightBoundary: 7.5
-  clickAreaLeft: -0.8
-  clickAreaRight: 0.8
-  stackThreshold: 1
 --- !u!212 &1485748906
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1244,7 +1220,7 @@ GameObject:
   - component: {fileID: 1886656428}
   m_Layer: 0
   m_Name: table
-  m_TagString: Table
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1440,15 +1416,32 @@ PrefabInstance:
       propertyPath: nextSceneName
       value: Champagne
       objectReference: {fileID: 0}
+    - target: {fileID: 5619527680743958885, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+      propertyPath: nextSceneName
+      value: Champagne
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289447761068900058, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6899492963690717652, guid: 0acdedba7267da44c82239428da7acae, type: 3}
       propertyPath: m_Name
       value: timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581793801490350633, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+      propertyPath: nextSceneName
+      value: Champagne
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+--- !u!4 &6001472744318132843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1969424959951568745, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+  m_PrefabInstance: {fileID: 6001472744318132842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

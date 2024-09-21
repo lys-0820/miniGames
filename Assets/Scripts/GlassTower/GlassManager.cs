@@ -44,9 +44,8 @@ public class GlassManager : MonoBehaviour
         {
             currentIndex++;
             //TODO: change the win condition
-            if (currentIndex >= 4)
+            if (currentIndex >= 3)
             {
-                Debug.Log("游戏胜利！所有物体都已成功堆叠。");
                 isWin = true;
                 isGameOver = true;
                 GameTimer.Instance.MarkGameAsSuccess();
