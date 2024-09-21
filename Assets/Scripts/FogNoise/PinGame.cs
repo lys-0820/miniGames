@@ -137,11 +137,13 @@ public class PinGame : MonoBehaviour
         {
             resultText.text = "Win";
             resultText.color = Color.green;
+            GameTimer.Instance.MarkGameAsSuccess();
         }
         else
         {
             resultText.text = "Fail";
             resultText.color = Color.red;
+            GameTimer.Instance.MarkGameAsFailure();
         }
     }
 

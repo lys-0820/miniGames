@@ -2,46 +2,43 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    private int rotationState = 0;
-    [SerializeField] private bool isCorrectRotation = false;
     [SerializeField] private int correctRotation = 0;
+    [SerializeField] public bool canRandomRotate = true;
+
+    private int rotationState;
 
     void Start()
     {
-        SetRandomRotation();
+        // 根据当前旋转设置初始 rotationState
+        rotationState = Mathf.RoundToInt(transform.rotation.eulerAngles.z / 90) % 4;
+        Debug.Log($"Block {name} initialized with rotationState {rotationState}");
     }
 
     void OnMouseDown()
     {
-        //Debug.Log("click");
+        Debug.Log("点击了方块");
         RotateBlock();
+        PuzzleManager.Instance.CheckIfPuzzleSolved();
     }
 
-    void RotateBlock()
+    public void RotateBlock()
     {
         rotationState = (rotationState + 1) % 4;
-        transform.rotation = Quaternion.Euler(0, 0, rotationState * 90); // Rotate in 90-degree increments
-        Debug.Log($"当前: {rotationState} 正确: {correctRotation}");
-        
-        PuzzleManager.Instance.CheckIfPuzzleSolved();
+        transform.rotation = Quaternion.Euler(0, 0, rotationState * 90);
+        Debug.Log($"方块旋转: 新的旋转状态 = {rotationState}");
     }
 
     public bool IsCorrectRotation()
     {
-        
-        return rotationState == correctRotation; // Change this depending on the correct rotation for the puzzle
-        
-    }
-
-    public void SetRandomRotation()
-    {
-        rotationState = Random.Range(0, 4);
-        transform.rotation = Quaternion.Euler(0, 0, rotationState * 90); // Rotate in 90-degree increments
+        return rotationState == correctRotation;
     }
 
     public void SetColor(Color color)
     {
-        Debug.Log("set color");
-        GetComponent<SpriteRenderer>().color = color;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = color;
+        }
     }
 }

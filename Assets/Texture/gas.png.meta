@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f52e1f0025065488e8df8e5a6fde55
-      internalID: -828998676
+      spriteID: 09a213e1504addd40bbab2cc12c1f91c
+      internalID: 1698792780
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75c9e1df6905d834380b36d7ff507533
-      internalID: 426467181
+      spriteID: 1b52f8bee9e6cd54b8fd3f302331abe3
+      internalID: -1964854226
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0f6c81db4602dc42904cb2bbbf58579
-      internalID: -1319590903
+      spriteID: 4f25fe2413d40fd48a5f23716f060424
+      internalID: -135207853
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d30d0356d8ff494997037725aebaab8
-      internalID: 1219646488
+      spriteID: 734eb97d4689b2a41a817aee79c2822b
+      internalID: 1928393677
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1912a4a20e8ee1d4890c45b8cfc26171
-      internalID: 1879906417
+      spriteID: 6a3cc71da9c72e742baa2d98a51fe1ae
+      internalID: -166986108
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d6dc64285d76384cad52ff5288defb5
-      internalID: -80572874
+      spriteID: a814288646c2bc647a395ae17658e129
+      internalID: 1710070546
       vertices: []
       indices: 
       edges: []
@@ -233,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gas_0: -828998676
-      gas_1: 426467181
-      gas_2: -1319590903
-      gas_3: 1219646488
-      gas_4: 1879906417
-      gas_5: -80572874
+      gas_0: 1698792780
+      gas_1: -1964854226
+      gas_2: -135207853
+      gas_3: 1928393677
+      gas_4: -166986108
+      gas_5: 1710070546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
