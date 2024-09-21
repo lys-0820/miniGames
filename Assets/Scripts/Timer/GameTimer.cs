@@ -40,6 +40,7 @@ public class GameTimer : MonoBehaviour
     void OnEnable()
     {
         ResetTimer();
+        timeImage.gameObject.SetActive(true);
         transform.gameObject.SetActive(true);
         skipButton.SetActive(false);
         successWindow.SetActive(false);
@@ -119,6 +120,7 @@ public class GameTimer : MonoBehaviour
             if(successMusic != null){
                 successMusic.Play();
             }
+            timeImage.gameObject.SetActive(false);
             successWindow.SetActive(true); // show success window
             //TODO: change success window
             Invoke("LoadNextScene", 2f); // delay 2 seconds to load next scene
@@ -129,6 +131,7 @@ public class GameTimer : MonoBehaviour
             // game failure, show failure window and load this scene
             retryTimes++;
             Debug.Log("retryTimes: " + retryTimes);
+            timeImage.gameObject.SetActive(false);
             failureWindow.SetActive(true);
             if(failureMusic != null){
                 failureMusic.Play();
