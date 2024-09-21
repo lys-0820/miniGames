@@ -15,7 +15,7 @@ public class AutoMove : MonoBehaviour
     private bool IsRegistered = false;
     private Rigidbody2D rb;
     private AutoMove stackTarget; // target for stacking
-
+    [SerializeField] private AudioSource breakSound;
     void Start()
     {
         
@@ -82,8 +82,13 @@ public class AutoMove : MonoBehaviour
                 else
                 {
                     // failure
+                    // glass breaking sound
+                    if(breakSound != null){
+                        breakSound.Play();
+                    }
                     GlassManager.Instance.SetWinCondition(false);
                     GlassManager.Instance.SetGameOverCondition(true);
+
                     GlassManager.Instance.ClearObject();
                     GameTimer.Instance.MarkGameAsFailure();
                 }
