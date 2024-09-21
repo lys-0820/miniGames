@@ -51,7 +51,6 @@ public class GameTimer : MonoBehaviour
         if (!gameEnded)
         {
             timeRemaining -= Time.deltaTime;
-            Debug.Log(timeRemaining);
             UpdateTimeText();
             if (timeRemaining <= 0)
             {
@@ -131,19 +130,24 @@ public class GameTimer : MonoBehaviour
             // game failure, show failure window and load this scene
             retryTimes++;
             Debug.Log("retryTimes: " + retryTimes);
-            timeImage.gameObject.SetActive(false);
-            failureWindow.SetActive(true);
-            if(failureMusic != null){
-                failureMusic.Play();
-            }
-            if(retryTimes >= 3){
-                skipButton.SetActive(true);
+
+            //failureWindow.SetActive(true);
+            Invoke("ShowFailureWindow", 2f);
+            
 
         }
-            failureWindow.SetActive(true);
-            Invoke("LoadThisScene", 2f);
+    }
+    void ShowFailureWindow(){
+        timeImage.gameObject.SetActive(false);
+        failureWindow.SetActive(true);
+        if(failureMusic != null){
+            failureMusic.Play();
+        }
+        if(retryTimes >= 3){
+            skipButton.SetActive(true);
 
         }
+        Invoke("LoadThisScene", 2f);
     }
     // restart this game
     void LoadThisScene()
@@ -174,5 +178,8 @@ public class GameTimer : MonoBehaviour
         {
             Invoke("LoadNextScene", timeRemaining);
         }
+    }
+    public float GetRemainingTime(){
+        return timeRemaining;
     }
 }

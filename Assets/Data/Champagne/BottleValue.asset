@@ -21,7 +21,7 @@ MonoBehaviour:
     It''s limited between 0 and 20.'
   description: 
   _type: 1
-  _currentValue: 20
+  _currentValue: 15
   _defaultValue: 0
   _hasLimits: 1
   _minValue: 0

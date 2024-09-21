@@ -28,6 +28,11 @@ public class ShakeChampagne : MonoBehaviour
     {
         clickCount = 0;
     }
+    private void Update(){
+        if(GameTimer.Instance.GetRemainingTime() <= 0.02f){
+            targetImage.sprite = failureSprite;
+        }
+    }
     private void OnMouseDown()
     {
 
@@ -57,7 +62,6 @@ public class ShakeChampagne : MonoBehaviour
             // 生成一个随机摇晃位置
             Vector3 randomPoint = originalPosition + Random.insideUnitSphere * shakeAmount;
             randomPoint.z = originalPosition.z;  // 保持Z轴不变
-            Debug.Log("randomPoint: " + randomPoint);
             // 更新瓶子的位置
             transform.localPosition = randomPoint;
 
