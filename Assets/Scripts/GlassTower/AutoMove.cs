@@ -7,14 +7,14 @@ public class AutoMove : MonoBehaviour
     public float rightBoundary = 7.5f;
     public float clickAreaLeft;
     public float clickAreaRight;
-    public float stackThreshold = 0.5f; // 堆叠允许的水平距离阈值
+    public float stackThreshold = 0.5f; // threshold for stacking
 
     private int direction = 1;
     private bool isClicked = false;
     private bool isStacked = false;
     private bool IsRegistered = false;
     private Rigidbody2D rb;
-    private AutoMove stackTarget; // 下方的目标物体
+    private AutoMove stackTarget; // target for stacking
 
     void Start()
     {
@@ -27,11 +27,11 @@ public class AutoMove : MonoBehaviour
     {
         if (!isClicked && !isStacked)
         {
-            // 水平移动
+            // move horizontally
             Vector3 movement = new Vector3(direction, 0, 0) * moveSpeed * Time.deltaTime;
             transform.Translate(movement);
 
-            // 到达边界时改变方向
+            // change direction when reaching boundaries
             if (transform.position.x >= rightBoundary)
             {
                 direction = -1;
@@ -50,13 +50,16 @@ public class AutoMove : MonoBehaviour
         {
             GlassManager.Instance.RegisterAutoMove(this);
             IsRegistered = true;
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (mousePosition.x >= clickAreaLeft && mousePosition.x <= clickAreaRight)
-            {
-                isClicked = true;
-                rb.gravityScale = 1; // 启用重力
-                stackTarget = GlassManager.Instance.GetStackTarget(this);
-            }
+            isClicked = true;
+            rb.gravityScale = 1; // active gravity
+            stackTarget = GlassManager.Instance.GetStackTarget(this);
+            // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // if (mousePosition.x >= clickAreaLeft && mousePosition.x <= clickAreaRight)
+            // {
+            //     isClicked = true;
+            //     rb.gravityScale = 1; // active gravity
+            //     stackTarget = GlassManager.Instance.GetStackTarget(this);
+            // }
         }
     }
 
@@ -69,7 +72,7 @@ public class AutoMove : MonoBehaviour
                 float horizontalDistance = Mathf.Abs(transform.position.x - stackTarget.transform.position.x);
                 if (horizontalDistance <= stackThreshold)
                 {
-                    // 成功堆叠
+                    // success
                     isStacked = true;
                     rb.gravityScale = 0;
                     rb.velocity = Vector2.zero;
@@ -78,9 +81,7 @@ public class AutoMove : MonoBehaviour
                 }
                 else
                 {
-                    // 堆叠失败
-                    Debug.Log("游戏失败：堆叠不成功");
-                    //Destroy(gameObject, 2f); // 2秒后销毁物体
+                    // failure
                     GlassManager.Instance.SetWinCondition(false);
                     GlassManager.Instance.SetGameOverCondition(true);
                     GlassManager.Instance.ClearObject();

@@ -77,6 +77,7 @@ public class ShakeChampagne : MonoBehaviour
 
                 // 添加旋转扭矩，使瓶盖在弹出时旋转
                 rb.AddTorque(capSpinTorque);
+                //TODO: play sound and animation
             }
         }
 
