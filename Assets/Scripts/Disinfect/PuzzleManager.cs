@@ -24,12 +24,19 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(GameTimer.Instance.GetRemainingTime()<= 0.02f && !GameTimer.Instance.GetGameSuccess())
+        {
+            solvedAnimationControllerVirus.SetTrigger("VirusWin");
+        }
+    }
     void Start()
     {
         Debug.Log("PuzzleManager Start called");
         InitializeBlocks();
         RandomizeSelectedBlocks(4);
-        solvedAnimationControllerVirus.SetTrigger("Start");
+        solvedAnimationControllerVirus.SetTrigger("VirusGe");
     }
 
     void InitializeBlocks()
@@ -111,7 +118,8 @@ public class PuzzleManager : MonoBehaviour
         else
         {
             //PlaySolvedAnimationVirus();
-            
+            GameTimer.Instance.MarkGameAsFailure();
+            //solvedAnimationControllerVirus.SetTrigger("VirusWin");
         }
     }
 
@@ -120,7 +128,7 @@ public class PuzzleManager : MonoBehaviour
         if (solvedAnimationController != null)
         {
             solvedAnimationController.SetTrigger("FixTube");
-            solvedAnimationControllerVirus.SetTrigger("End");
+            solvedAnimationControllerVirus.SetTrigger("VirusGone");
         }
     }
     private void SetAllBlocksColor(Color color)
