@@ -9,6 +9,8 @@ public class PuzzleManager : MonoBehaviour
     public int columns = 4;
     private List<Block> selectedBlocks = new List<Block>();
 
+    public Animator solvedAnimationController;
+
     void Awake()
     {
         if (Instance == null)
@@ -99,11 +101,19 @@ public class PuzzleManager : MonoBehaviour
         if (allCorrect)
         {
             Debug.Log("拼图已解决！");
-            SetAllBlocksColor(Color.green);
+            //SetAllBlocksColor(Color.green);
+            PlaySolvedAnimation();
             // 在这里可以触发胜利状态
         }
     }
 
+    private void  PlaySolvedAnimation()
+    {
+        if (solvedAnimationController != null)
+        {
+            solvedAnimationController.SetTrigger("FixTube");
+        }
+    }
     private void SetAllBlocksColor(Color color)
     {
         for (int i = 0; i < rows; i++)
