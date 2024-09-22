@@ -11,6 +11,7 @@ public class PuzzleManager : MonoBehaviour
 
     public Animator solvedAnimationController;
     public Animator solvedAnimationControllerVirus;
+    public AudioSource solvedAudioSource;
 
     void Awake()
     {
@@ -128,9 +129,18 @@ public class PuzzleManager : MonoBehaviour
         if (solvedAnimationController != null)
         {
             solvedAnimationController.SetTrigger("FixTube");
+            PlaySolvedSound();
             solvedAnimationControllerVirus.SetTrigger("VirusGone");
         }
     }
+    private void PlaySolvedSound()
+    {
+        if (solvedAudioSource != null)
+        {
+            solvedAudioSource.PlayOneShot(solvedAudioSource.clip);
+        }
+    }
+
     private void SetAllBlocksColor(Color color)
     {
         for (int i = 0; i < rows; i++)
