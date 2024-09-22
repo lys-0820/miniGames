@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Numerics;
+using Vector2 = UnityEngine.Vector2;
 
 public class CatGameManager : MonoBehaviour
 {
@@ -40,6 +42,8 @@ public class CatGameManager : MonoBehaviour
     public void GameWon()
     {
         Debug.Log("Game Won");
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
         _catAnimator.SetBool("success", true);
         _timer.MarkGameAsSuccess();
     }
@@ -47,9 +51,11 @@ public class CatGameManager : MonoBehaviour
     public void GameLost()
     {
         Debug.Log("Game Lost");
-        _catAnimator.SetBool("fail", true);
-        _timer.MarkGameAsFailure();
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 
+        _catAnimator.SetBool("fail", true);
+        _slider.gameObject.SetActive(false);
+        _timer.MarkGameAsFailure();
     }
     
     void Start()
