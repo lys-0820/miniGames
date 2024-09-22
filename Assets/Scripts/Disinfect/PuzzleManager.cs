@@ -98,7 +98,18 @@ public class PuzzleManager : MonoBehaviour
     public void CheckIfPuzzleSolved()
     {
         bool allCorrect = true;
-        foreach (Block block in selectedBlocks)
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < columns; j++)
+            {
+                if(!blocks[i,j].IsCorrectRotation())
+                {
+                    allCorrect = false;
+                    break;
+                }
+            }
+        }
+        /*foreach (Block block in selectedBlocks)
         {
             if (!block.IsCorrectRotation())
             {
@@ -106,7 +117,7 @@ public class PuzzleManager : MonoBehaviour
                 allCorrect = false;
                 break;
             }
-        }
+        }*/
 
         if (allCorrect)
         {
@@ -141,7 +152,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    private void SetAllBlocksColor(Color color)
+    /*private void SetAllBlocksColor(Color color)
     {
         for (int i = 0; i < rows; i++)
         {
@@ -150,5 +161,5 @@ public class PuzzleManager : MonoBehaviour
                 blocks[i, j].SetColor(color);
             }
         }
-    }
+    }*/
 }
