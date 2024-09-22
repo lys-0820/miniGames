@@ -5,20 +5,19 @@ using OkapiKit;
 
 public class BalloonStateManager : MonoBehaviour
 {
-    [SerializeField] private Hypertag _obstacleTag;
+    [SerializeField] private Hypertag _winTag;
     [SerializeField] private GameTimer _gameTimer;
 
     void Start()
     {
-        _gameTimer.MarkGameAsSuccess();
     }
     
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log(collider.gameObject.name);
-        if (collider.gameObject.HasHypertag(_obstacleTag))
+        if (collider.gameObject.HasHypertag(_winTag))
         {
-            _gameTimer.MarkGameAsFailure();
+            _gameTimer.MarkGameAsSuccess();
         }
     }
 }

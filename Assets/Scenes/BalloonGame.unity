@@ -710,7 +710,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &367448911
+--- !u!1 &341938971
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -718,79 +718,146 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 367448912}
-  - component: {fileID: 367448914}
-  - component: {fileID: 367448913}
+  - component: {fileID: 341938975}
+  - component: {fileID: 341938974}
+  - component: {fileID: 341938973}
+  - component: {fileID: 341938972}
   m_Layer: 0
-  m_Name: BalloonSpeed
+  m_Name: FinishLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &367448912
-Transform:
+--- !u!61 &341938972
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367448911}
+  m_GameObject: {fileID: 341938971}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 980915404}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &367448913
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &341938973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367448911}
+  m_GameObject: {fileID: 341938971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb749f9fa0d36840b27121330707a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: Adds 2 to variable BalloonSpeed, every second.
-  description: 
-  enableAction: 1
-  hasTags: 0
-  actionTags: []
-  hasConditions: 0
-  actionConditions: []
-  valueHandler: {fileID: 367448914}
-  variable: {fileID: 0}
-  operation: 2
-  changeValue: 2
-  changeValueHandler: {fileID: 0}
-  changeVariable: {fileID: 0}
-  scaleWithTime: 1
---- !u!114 &367448914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367448911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56c124f990a067b478caf900b6cb6d30, type: 3}
+  m_Script: {fileID: 11500000, guid: f6fc8a1e9dd21634a9cb00402422ec6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: 
   description: 
-  type: 0
-  currentValue: 2
-  defaultValue: 0
-  hasLimits: 0
-  minValue: -3.4028235e+38
-  maxValue: 3.4028235e+38
+  hypertags:
+  - {fileID: 11400000, guid: 3075d721229349347b9f3668ddd47e1a, type: 2}
+--- !u!212 &341938974
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341938971}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &341938975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341938971}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2283, y: 6.09, z: 0}
+  m_LocalScale: {x: 19.486088, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &490036445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,7 +977,7 @@ Transform:
   m_GameObject: {fileID: 507436768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.84, y: 13.21, z: 0}
+  m_LocalPosition: {x: 1.84, y: 11.2, z: 0}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1223,7 +1290,6 @@ GameObject:
   - component: {fileID: 972216217}
   - component: {fileID: 972216216}
   - component: {fileID: 972216219}
-  - component: {fileID: 972216220}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1349,42 +1415,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &972216220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972216215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9acff5f09ab58e479b806a70160b1c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: 'Camera follows [Player] target.
-
-    It will trail the target, closing
-    90% of the distance each frame.
-
-    The camera won''t leave the area defined
-    by CameraLimits.'
-  description: 
-  mode: 0
-  targetTag: {fileID: 0}
-  tagMode: 0
-  allowZoom: 0
-  zoomMargin: 1.1
-  minMaxSize: {x: 180, y: 360}
-  targetObject: {fileID: 1177212180}
-  followSpeed: 0.9
-  rect:
-    serializedVersion: 2
-    x: -100
-    y: -100
-    width: 200
-    height: 200
-  cameraLimits: {fileID: 973101398}
 --- !u!1 &973101397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1584,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 265322864}
-  - {fileID: 367448912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125213876
@@ -1678,6 +1707,7 @@ GameObject:
   - component: {fileID: 1177212187}
   - component: {fileID: 1177212188}
   - component: {fileID: 1177212189}
+  - component: {fileID: 1177212190}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1910,8 +1940,8 @@ Transform:
   m_GameObject: {fileID: 1177212177}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2493, y: 1.46, z: 0}
-  m_LocalScale: {x: 0.34, y: 0.34445092, z: 0.7320955}
+  m_LocalPosition: {x: 0.2493, y: 0.27, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.30392727, z: 0.6459666}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 150945444}
@@ -1933,7 +1963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: Moves object Player in the up direction, plus 0 degrees, at a speed
-    of 9 units/second, for 0.2 seconds.
+    of 4 units/second, for 0.2 seconds.
   description: 
   enableAction: 1
   hasTags: 0
@@ -1946,7 +1976,7 @@ MonoBehaviour:
     type: 0
     variableInstance: {fileID: 0}
     variable: {fileID: 0}
-    floatValue: 9
+    floatValue: 4
     intValue: 0
   direction: 1
   angle:
@@ -1977,7 +2007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "If (GameState == 1) and When button Fire1 is pressed:\n         
-    Moves object Player in the up direction, plus 0 degrees, at a speed of 9 units/second,
+    Moves object Player in the up direction, plus 0 degrees, at a speed of 4 units/second,
     for 0.2 seconds.\n          adds 1 to variable Presses\n"
   description: 
   enableTrigger: 1
@@ -2115,7 +2145,7 @@ MonoBehaviour:
 
 
     Single
-    axis movement towards the Up axis of the object, at -5 units per second.
+    axis movement towards the Up axis of the object, at -3 units per second.
 
 '
   description: 
@@ -2139,7 +2169,7 @@ MonoBehaviour:
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
   axis: 0
-  speed: -5
+  speed: -3
 --- !u!114 &1177212188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2176,8 +2206,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ee0492a7e81d44088dd6a543fe5905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacleTag: {fileID: 11400000, guid: 0201cade139f3a047ac1ae18aa40d702, type: 2}
+  _winTag: {fileID: 11400000, guid: 3075d721229349347b9f3668ddd47e1a, type: 2}
   _gameTimer: {fileID: 490036447}
+--- !u!114 &1177212190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177212177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b66a51b7fe64c4390ac471b7df316b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "When a collision with a trigger with tags [FinishLine] starts:\n         
+    sets Expression's sprite to [Succses Face]\n          sets variable GameState
+    to 0\n          changes body type of this object to Static\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 1
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 642053433}
+  - delay: 0
+    action: {fileID: 642053437}
+  - delay: 0
+    action: {fileID: 1177212188}
+  isTrigger: 1
+  eventType: 0
+  tags:
+  - {fileID: 11400000, guid: 3075d721229349347b9f3668ddd47e1a, type: 2}
 --- !u!1 &1352348663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,7 +2442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12.95}
+  m_AnchoredPosition: {x: 0, y: 9.83}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460444159
@@ -2514,8 +2576,8 @@ Transform:
   m_GameObject: {fileID: 1752506527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: 0, y: -1.74, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6274069214478135969}
@@ -2958,8 +3020,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.6967163}
-  m_SizeDelta: {x: 0, y: 3.3933}
+  m_AnchoredPosition: {x: 0, y: 0.0000333786}
+  m_SizeDelta: {x: 0, y: -0.000065804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031516480
 MonoBehaviour:
@@ -3317,3 +3379,4 @@ SceneRoots:
   - {fileID: 973101399}
   - {fileID: 980915404}
   - {fileID: 1125213880}
+  - {fileID: 341938975}
