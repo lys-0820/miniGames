@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: DevilGameDescription
   m_EditorClassIdentifier: 
   gameDescriptions:
-  - sceneName: Cat
-    descriptionText: this is champagne game
+  - sceneName: CatGame
+    descriptionText: Appease the void by petting her right!
   - sceneName: DisinfectRoom
-    descriptionText: this is glass tower game
+    descriptionText: Solve and rid the world of an impending virus outbreak
+  - sceneName: ButtonGame
+    descriptionText: Release the button at the right time to save the world!

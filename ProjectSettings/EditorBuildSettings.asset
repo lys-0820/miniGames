@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BalloonGame.unity
     guid: 42314b13c7446e0469130a017dc81fb6
+  - enabled: 1
+    path: Assets/Scenes/ButtonGame.unity
+    guid: 215becb672bd6b944b6c1fa54d14396f
+  - enabled: 1
+    path: Assets/Scenes/CatGame.unity
+    guid: 85793bbd2a954b74098c7b5735e33a7f
+  - enabled: 1
+    path: Assets/Scenes/DisinfectRoom.unity
+    guid: ad85c1ad780373041b301b87665843c5
   m_configObjects: {}
