@@ -182,4 +182,7 @@ public class GameTimer : MonoBehaviour
     public float GetRemainingTime(){
         return timeRemaining;
     }
+    public bool GetGameSuccess(){
+        return gameSuccess;
+    }
 }

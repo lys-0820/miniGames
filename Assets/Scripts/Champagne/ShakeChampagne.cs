@@ -29,7 +29,7 @@ public class ShakeChampagne : MonoBehaviour
         clickCount = 0;
     }
     private void Update(){
-        if(GameTimer.Instance.GetRemainingTime() <= 0.02f){
+        if(GameTimer.Instance.GetRemainingTime() <= 0.02f && !GameTimer.Instance.GetGameSuccess()){
             targetImage.sprite = failureSprite;
         }
     }
