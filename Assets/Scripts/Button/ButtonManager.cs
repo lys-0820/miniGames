@@ -53,14 +53,14 @@ public class ButtonManager : MonoBehaviour
 
     public void CheckWinState()
     {
-        if (timeRemaining <= _humanErrorMargin || _extraTime <= _humanErrorMargin)
+        if (timeRemaining <= _humanErrorMargin && _extraTime <= _humanErrorMargin)
         {
             _animator.SetBool("success", true);
             _gameTimer.MarkGameAsSuccess();
         }
         else
         {
-            _animator.SetBool("fail", false);
+            _animator.SetBool("fail", true);
             _gameTimer.MarkGameAsFailure();
         }
     }

@@ -6,28 +6,33 @@ using TMPro;
 public class DevilMainMenu : MonoBehaviour
 {
     private string firstSceneName;
+    [SerializeField] private Animator _animator;
     [SerializeField] private GameDescriptions gameDescriptions;
     [SerializeField] private GameObject descriptionWindow;
     [SerializeField] private TMP_Text descriptionText;
     [SerializeField] private string[] sceneNames;
     void Start()
     {
-        firstSceneName = GetRandomGame();
+        
         descriptionWindow.gameObject.SetActive(false);
     }
 
     public void StartGame()
     {
-        LoadNextScene();
+        _animator.SetBool("start", true);
     }
     public void ExitGame()
     {
         Application.Quit();
     }
-    void LoadNextScene()
+    public void LoadNextScene()
     {
         //SceneManager.LoadScene(nextSceneName);
+        firstSceneName = GetRandomGame();
         string des = GetExplanationForScene(firstSceneName);
+        Debug.Log(firstSceneName);
+        Debug.Log(des);
+
         if (!string.IsNullOrEmpty(des))
         {
             descriptionWindow.SetActive(true);
@@ -65,7 +70,7 @@ public class DevilMainMenu : MonoBehaviour
     IEnumerator ActuallyLoadNextScene(float delay = 0f)
     {
         yield return new WaitForSeconds(delay);
-        
+        Debug.Log(firstSceneName);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(firstSceneName);
         while (!asyncLoad.isDone)
         {
