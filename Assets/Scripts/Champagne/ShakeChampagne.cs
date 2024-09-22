@@ -16,12 +16,20 @@ public class ShakeChampagne : MonoBehaviour
     [SerializeField] private Sprite successSprite;
     [SerializeField] private Sprite failureSprite;
     [SerializeField] private Sprite shakingSprite;
+    //progress bar
+    [SerializeField] private Image progressBar;
+    [SerializeField] private RectTransform movingBottle;
+    private float progressPerClick; // 每次点击增加的进度
+    private Vector2 imageStartPosition; // 图像的起始位置
 
     private void Start()
     {
         // 记录瓶子的初始位置
         originalPosition = transform.localPosition;
         targetImage.sprite = originalSprite;
+        // progress bar init
+        progressPerClick = 1f / 20f; // 每次点击增加5%的进度
+        imageStartPosition = movingBottle.anchoredPosition;
         
     }
     private void OnEnable()
@@ -35,19 +43,21 @@ public class ShakeChampagne : MonoBehaviour
     }
     private void OnMouseDown()
     {
-
         // 每次点击时增加点击次数
         clickCount++;
-
         // 如果点击次数少于20次，继续摇晃
         if (clickCount < 20)
         {
+            //update progress bar
+            UpdateProgressBar();
             StartCoroutine(Shake());
         }
 
         // 如果点击次数达到20次且瓶盖未弹出，则弹出瓶盖
         if (clickCount >= 20 && !capEjected)
         {
+            //update progress bar
+            UpdateProgressBar();
             EjectCap();
             GameTimer.Instance.MarkGameAsSuccess();
         }
@@ -90,5 +100,17 @@ public class ShakeChampagne : MonoBehaviour
 
         capEjected = true; // 标记瓶盖已弹出
 
+    }
+    private void UpdateProgressBar()
+    {
+        if (progressBar != null)
+        {
+            progressBar.fillAmount = clickCount * progressPerClick;
+        }
+        if (movingBottle != null)
+        {
+            Vector2 newPosition = imageStartPosition + new Vector2(clickCount * 39.5f, 0);
+            movingBottle.anchoredPosition = newPosition;
+        }
     }
 }
