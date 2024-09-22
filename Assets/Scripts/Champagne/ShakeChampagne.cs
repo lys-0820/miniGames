@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 public class ShakeChampagne : MonoBehaviour
 {
+    [SerializeField] Animator _kidAnimator;
     private Vector3 originalPosition;
     public float shakeAmount = 0.1f;
     public float shakeDuration = 0.2f;
@@ -38,7 +39,8 @@ public class ShakeChampagne : MonoBehaviour
     }
     private void Update(){
         if(GameTimer.Instance.GetRemainingTime() <= 0.02f && !GameTimer.Instance.GetGameSuccess()){
-            targetImage.sprite = failureSprite;
+            _kidAnimator.SetBool("lose", true);
+            //targetImage.sprite = failureSprite;
         }
     }
     private void OnMouseDown()
@@ -66,7 +68,8 @@ public class ShakeChampagne : MonoBehaviour
     private IEnumerator Shake()
     {
         float elapsedTime = 0f;
-        targetImage.sprite = shakingSprite;
+        _kidAnimator.SetTrigger("shake");
+        //targetImage.sprite = shakingSprite;
         while (elapsedTime < shakeDuration)
         {
             // 生成一个随机摇晃位置
@@ -78,7 +81,7 @@ public class ShakeChampagne : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        targetImage.sprite = originalSprite;
+        //targetImage.sprite = originalSprite;
         // 恢复瓶子的原始位置
         transform.localPosition = originalPosition;
     }
@@ -90,7 +93,8 @@ public class ShakeChampagne : MonoBehaviour
         {
             animator.SetTrigger("IsEject");
         }
-        targetImage.sprite = successSprite;
+        _kidAnimator.SetBool("win", true);
+        //targetImage.sprite = successSprite;
         //TODO: play sound
         if (successMusic != null)
         {
