@@ -18,4 +18,4 @@ MonoBehaviour:
   - sceneName: GlassTowerRoom
     descriptionText: "Stack the glasses to build\_the\_tower!"
   - sceneName: BalloonGame
-    descriptionText: Fly the pig to avoid cactus!
+    descriptionText: Help the piggy away from prickly cacti!

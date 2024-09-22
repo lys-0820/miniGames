@@ -192,6 +192,7 @@ public class GameTimer : MonoBehaviour
             ActuallyLoadNextScene();
         }
     }
+    
     string GetExplanationForScene(string sceneName)
     {
         if (gameDescriptions != null)
