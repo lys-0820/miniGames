@@ -10,6 +10,7 @@ public class PuzzleManager : MonoBehaviour
     private List<Block> selectedBlocks = new List<Block>();
 
     public Animator solvedAnimationController;
+    public Animator solvedAnimationControllerVirus;
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log("PuzzleManager Start called");
         InitializeBlocks();
         RandomizeSelectedBlocks(4);
+        solvedAnimationControllerVirus.SetTrigger("Start");
     }
 
     void InitializeBlocks()
@@ -94,7 +96,7 @@ public class PuzzleManager : MonoBehaviour
             {
                 Debug.Log("拼图未解决");
                 allCorrect = false;
-                return;
+                break;
             }
         }
 
@@ -104,6 +106,12 @@ public class PuzzleManager : MonoBehaviour
             //SetAllBlocksColor(Color.green);
             PlaySolvedAnimation();
             // 在这里可以触发胜利状态
+            GameTimer.Instance.MarkGameAsSuccess();
+        }
+        else
+        {
+            //PlaySolvedAnimationVirus();
+            
         }
     }
 
@@ -112,6 +120,7 @@ public class PuzzleManager : MonoBehaviour
         if (solvedAnimationController != null)
         {
             solvedAnimationController.SetTrigger("FixTube");
+            solvedAnimationControllerVirus.SetTrigger("End");
         }
     }
     private void SetAllBlocksColor(Color color)
