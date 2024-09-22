@@ -14,10 +14,16 @@ public class GameTimer : MonoBehaviour
     //skip
     private static int retryTimes = 0;
     [SerializeField] private GameObject skipButton;
+    private bool isSkipping = false;
     //time text & image
     [SerializeField] private TMP_Text timeText;
     [SerializeField] private Image timeImage;
+    //description text
+    [SerializeField] private GameDescriptions gameDescriptions;
+    [SerializeField] private GameObject descriptionWindow;
+    [SerializeField] private TMP_Text descriptionText;
 
+    //success and failure window
     [SerializeField] private GameObject successWindow; // success window
     [SerializeField] private GameObject failureWindow; // failure window
     [SerializeField] private string nextSceneName; // next scene name
@@ -39,9 +45,11 @@ public class GameTimer : MonoBehaviour
 
     void OnEnable()
     {
+        isSkipping = false;
         ResetTimer();
         timeImage.gameObject.SetActive(true);
         transform.gameObject.SetActive(true);
+        descriptionWindow.SetActive(false);
         skipButton.SetActive(false);
         successWindow.SetActive(false);
         failureWindow.SetActive(false);
@@ -107,7 +115,9 @@ public class GameTimer : MonoBehaviour
     // when time is up, judge the game result
     void EndGame()
     {
-
+        if(isSkipping){
+            return;
+        }
         gameEnded = true;
         if(bgMusic != null){
             bgMusic.Stop();
@@ -149,6 +159,13 @@ public class GameTimer : MonoBehaviour
         }
         Invoke("LoadThisScene", 2f);
     }
+    void CloseFailureWindow(){
+        failureWindow.SetActive(false);
+        skipButton.SetActive(false);
+    }
+    void CloseSuccessWindow(){
+        successWindow.SetActive(false);
+    }
     // restart this game
     void LoadThisScene()
     {
@@ -159,14 +176,50 @@ public class GameTimer : MonoBehaviour
     // load next scene
     void LoadNextScene()
     {
+        //SceneManager.LoadScene(nextSceneName);
+        string des = GetExplanationForScene(nextSceneName);
+        if (!string.IsNullOrEmpty(des))
+        {   
+            CloseFailureWindow();
+            CloseSuccessWindow();
+            descriptionWindow.SetActive(true);
+            descriptionText.text = des;
+            descriptionText.gameObject.SetActive(true);
+            Invoke("ActuallyLoadNextScene", 4f);
+        }
+        else
+        {
+            ActuallyLoadNextScene();
+        }
+    }
+    string GetExplanationForScene(string sceneName)
+    {
+        if (gameDescriptions != null)
+    {
+        foreach (var description in gameDescriptions.gameDescriptions)
+        {
+            if (description.sceneName == sceneName)
+            {
+                return description.descriptionText;
+            }
+        }
+    }
+    return null;
+    }
+
+    void ActuallyLoadNextScene()
+    {
+        descriptionText.gameObject.SetActive(false);
+        descriptionWindow.SetActive(false);
         SceneManager.LoadScene(nextSceneName);
-        
     }
 
     // skip
     public void SkipGame(){
+        isSkipping = true;
         retryTimes = 0;
         skipButton.SetActive(false);
+        CancelInvoke();
         LoadNextScene();
     }
 

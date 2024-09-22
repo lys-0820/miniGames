@@ -1410,7 +1410,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4023157539178307006}
+  - {fileID: 130234856512953483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2872,18 +2872,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6124206711255118999, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+      propertyPath: nextSceneName
+      value: BalloonGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8174575393548957991, guid: 0acdedba7267da44c82239428da7acae, type: 3}
       propertyPath: nextSceneName
-      value: Balloon
+      value: BalloonGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162984700264029324, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+      propertyPath: nextSceneName
+      value: BalloonGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0acdedba7267da44c82239428da7acae, type: 3}
---- !u!4 &4023157539178307006 stripped
+--- !u!4 &130234856512953483 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 813976319387549321, guid: 0acdedba7267da44c82239428da7acae, type: 3}
+  m_CorrespondingSourceObject: {fileID: 667324704383970233, guid: 0acdedba7267da44c82239428da7acae, type: 3}
   m_PrefabInstance: {fileID: 130234856512953482}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

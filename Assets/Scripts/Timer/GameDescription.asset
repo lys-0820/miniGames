@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9346ee0abd21a764bbc5dab76e66e659, type: 3}
+  m_Name: GameDescription
+  m_EditorClassIdentifier: 
+  gameDescriptions:
+  - sceneName: Champagne
+    descriptionText: this is champagne game
+  - sceneName: GlassTowerRoom
+    descriptionText: this is glass tower game
