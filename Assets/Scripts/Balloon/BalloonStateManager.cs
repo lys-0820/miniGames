@@ -18,7 +18,6 @@ public class BalloonStateManager : MonoBehaviour
         Debug.Log(collider.gameObject.name);
         if (collider.gameObject.HasHypertag(_obstacleTag))
         {
-            Debug.Log("collided");
             _gameTimer.MarkGameAsFailure();
         }
     }
