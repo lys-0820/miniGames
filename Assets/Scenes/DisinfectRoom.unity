@@ -1921,6 +1921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rows: 3
   columns: 4
+  solvedAnimationController: {fileID: 1886969935}
 --- !u!4 &1761446067
 Transform:
   m_ObjectHideFlags: 0
@@ -2142,7 +2143,7 @@ Animator:
   m_GameObject: {fileID: 1886969934}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d81d65d311421c742ad5802877d05156, type: 2}
+  m_Controller: {fileID: 9100000, guid: c670aec08c89d1f4ca7706361139c103, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
