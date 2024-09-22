@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PartyMainMenu.unity
+    guid: fb38a69ad0f7c284e80b9a8b72fae58e
+  - enabled: 1
     path: Assets/Scenes/GlassTowerRoom.unity
     guid: 34707b2e5f8cabd4c9f9c53f6f787a5b
   - enabled: 1
