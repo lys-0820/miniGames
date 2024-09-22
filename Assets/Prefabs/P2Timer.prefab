@@ -495,7 +495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6356a123412a8f4e95d136512d4bae7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 689942563737a3b498a63c1ef97070c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -571,7 +571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 469095c5828096b4e806f829812f97d1, type: 3}
+  m_Sprite: {fileID: -635334188, guid: f24ae308278bf294c8628882ff43de7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Click blocks to repair broken tubes before too late!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0e5daf31825c13d4ea4e0403764a9e0d, type: 2}
   m_sharedMaterial: {fileID: 8852108080891531004, guid: 0e5daf31825c13d4ea4e0403764a9e0d, type: 2}
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281611367
-  m_fontColor: {r: 0.40251565, g: 0.20378934, b: 0.20378934, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
