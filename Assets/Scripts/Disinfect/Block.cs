@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] private int correctRotation = 0;
-    [SerializeField] public bool canRandomRotate = true;
+    private int correctRotation = 0;
+    [SerializeField] public bool canRandomRotate = false;
     [SerializeField] private AudioSource clickSound;
 
     private int rotationState;
@@ -12,10 +12,17 @@ public class Block : MonoBehaviour
     void Start()
     {
         // 根据当前旋转设置初始 rotationState
-        rotationState = Mathf.RoundToInt(transform.rotation.eulerAngles.z / 90) % 4;
+        //rotationState = Mathf.RoundToInt(transform.rotation.eulerAngles.z / 90) % 4;
+        
+        
         audioSource = GetComponent<AudioSource>();
         Debug.Log($"Block {name} initialized with rotationState {rotationState}");
     }
+    void OnEnable()
+    {
+        rotationState = Mathf.RoundToInt(transform.rotation.eulerAngles.z / 90) % 4;
+        correctRotation = rotationState;
+    }   
 
     void OnMouseDown()
     {
@@ -29,7 +36,7 @@ public class Block : MonoBehaviour
     {
         rotationState = (rotationState + 1) % 4;
         transform.rotation = Quaternion.Euler(0, 0, rotationState * 90);
-        Debug.Log($"方块旋转: 新的旋转状态 = {rotationState}");
+        //Debug.Log($"方块旋转: 新的旋转状态 = {rotationState}");
     }
 
     private void PlayClickSound()
@@ -45,12 +52,12 @@ public class Block : MonoBehaviour
         return rotationState == correctRotation;
     }
 
-    public void SetColor(Color color)
+    /*public void SetColor(Color color)
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             spriteRenderer.color = color;
         }
-    }
+    }*/
 }
