@@ -9,17 +9,27 @@ public class PartyMainMenu : MonoBehaviour
 {
     [SerializeField] private Button startButton;
     [SerializeField] private Button exitButton;
-    [SerializeField] private string firstSceneName;
+    private string firstSceneName;
     //description text
+    [SerializeField] private string[] sceneNames;
+
     [SerializeField] private GameDescriptions gameDescriptions;
     [SerializeField] private GameObject descriptionWindow;
     [SerializeField] private TMP_Text descriptionText;
     void Start()
     {
+        firstSceneName = GetRandomGame();
         startButton.onClick.AddListener(StartGame);
         exitButton.onClick.AddListener(ExitGame);
         descriptionWindow.gameObject.SetActive(false);
     }
+    
+    private string GetRandomGame()
+    {
+        var index  = Random.Range(0, sceneNames.Length);
+        return sceneNames[index];
+    }
+
 
     private void StartGame()
     {
@@ -39,7 +49,7 @@ public class PartyMainMenu : MonoBehaviour
             descriptionWindow.SetActive(true);
             descriptionText.text = des;
             descriptionText.gameObject.SetActive(true);
-            Invoke("ActuallyLoadNextScene", 4f);
+            StartCoroutine(ActuallyLoadNextScene(4f));
         }
         else
         {
@@ -61,10 +71,17 @@ public class PartyMainMenu : MonoBehaviour
         return null;
     }
 
-    void ActuallyLoadNextScene()
+    IEnumerator ActuallyLoadNextScene(float delay = 0f)
     {
+        yield return new WaitForSeconds(delay);
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(firstSceneName);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
         descriptionText.gameObject.SetActive(false);
         descriptionWindow.SetActive(false);
-        SceneManager.LoadScene(firstSceneName);
+        Destroy(this.gameObject);
     }
 }

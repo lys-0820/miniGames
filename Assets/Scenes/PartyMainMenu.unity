@@ -153,7 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 446728541}
   exitButton: {fileID: 1704955463}
-  firstSceneName: Champagne
+  sceneNames:
+  - GlassTowerRoom
+  - Champagne
+  - BalloonGame
   gameDescriptions: {fileID: 11400000, guid: 8f45f14933a996840b82620400f836ff, type: 2}
   descriptionWindow: {fileID: 419996136}
   descriptionText: {fileID: 714886159}

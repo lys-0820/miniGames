@@ -59,9 +59,12 @@ MonoBehaviour:
   gameDescriptions: {fileID: 11400000, guid: 8b9e4bb364b7757459d7b6447a63469d, type: 2}
   descriptionWindow: {fileID: 5274880280055681570}
   descriptionText: {fileID: 9038998681103667706}
+  sceneNames:
+  - ButtonGame
+  - CatGame
+  - DisinfectRoom
   successWindow: {fileID: 142807453797744251}
   failureWindow: {fileID: 1828448818426504409}
-  nextSceneName: ButtonGame
   bgMusic: {fileID: 7832861609466527726}
   successMusic: {fileID: 1703089068444504083}
   failureMusic: {fileID: 8245326639071309256}
@@ -1219,8 +1222,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

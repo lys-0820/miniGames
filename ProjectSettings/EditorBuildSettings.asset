@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BalloonGame.unity
     guid: 42314b13c7446e0469130a017dc81fb6
   - enabled: 1
+    path: Assets/Scenes/DevilMainMenu.unity
+    guid: 582bd59f43b21f8489d7edfc7652e1de
+  - enabled: 1
     path: Assets/Scenes/ButtonGame.unity
     guid: 215becb672bd6b944b6c1fa54d14396f
   - enabled: 1

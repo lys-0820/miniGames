@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class GameTimer : MonoBehaviour
     private float timeRemaining;
     private bool gameEnded = false;
     private bool gameSuccess = false;
-
+    private string nextSceneName;
     //skip
     private static int retryTimes = 0;
     [SerializeField] private GameObject skipButton;
@@ -22,11 +23,11 @@ public class GameTimer : MonoBehaviour
     [SerializeField] private GameDescriptions gameDescriptions;
     [SerializeField] private GameObject descriptionWindow;
     [SerializeField] private TMP_Text descriptionText;
-
+    [SerializeField] private string[] sceneNames;
+    
     //success and failure window
     [SerializeField] private GameObject successWindow; // success window
     [SerializeField] private GameObject failureWindow; // failure window
-    [SerializeField] private string nextSceneName; // next scene name
     [SerializeField] private AudioSource bgMusic;
     [SerializeField] private AudioSource successMusic;
     [SerializeField] private AudioSource failureMusic;
@@ -39,7 +40,7 @@ public class GameTimer : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            DontDestroyOnLoad(this);
         }
     }
 
@@ -177,6 +178,7 @@ public class GameTimer : MonoBehaviour
     void LoadNextScene()
     {
         //SceneManager.LoadScene(nextSceneName);
+        nextSceneName = GetRandomGame();
         string des = GetExplanationForScene(nextSceneName);
         if (!string.IsNullOrEmpty(des))
         {   
@@ -185,34 +187,47 @@ public class GameTimer : MonoBehaviour
             descriptionWindow.SetActive(true);
             descriptionText.text = des;
             descriptionText.gameObject.SetActive(true);
-            Invoke("ActuallyLoadNextScene", 4f);
+            StartCoroutine(ActuallyLoadNextScene(4f));
         }
         else
         {
             ActuallyLoadNextScene();
         }
     }
+
+    private string GetRandomGame()
+    {
+        var index  = Random.Range(0, sceneNames.Length);
+        return sceneNames[index];
+    }
     
     string GetExplanationForScene(string sceneName)
     {
         if (gameDescriptions != null)
-    {
-        foreach (var description in gameDescriptions.gameDescriptions)
         {
-            if (description.sceneName == sceneName)
+            foreach (var description in gameDescriptions.gameDescriptions)
             {
-                return description.descriptionText;
+                if (description.sceneName == sceneName)
+                {
+                    return description.descriptionText;
+                }
             }
         }
-    }
-    return null;
+        return null;
     }
 
-    void ActuallyLoadNextScene()
+    IEnumerator ActuallyLoadNextScene(float delay = 0f)
     {
+        yield return new WaitForSeconds(delay);
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextSceneName);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
         descriptionText.gameObject.SetActive(false);
         descriptionWindow.SetActive(false);
-        SceneManager.LoadScene(nextSceneName);
+        Destroy(this.gameObject);
     }
 
     // skip

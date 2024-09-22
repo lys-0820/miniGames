@@ -240,10 +240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d07803b120e954e98dd59eda2e618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSceneName: CatGame
   gameDescriptions: {fileID: 11400000, guid: 8b9e4bb364b7757459d7b6447a63469d, type: 2}
   descriptionWindow: {fileID: 2278562027468634393}
   descriptionText: {fileID: 3160346979111811777}
+  sceneNames:
+  - DisinfectRoom
+  - BalloonGame
+  - ButtonGame
 --- !u!1 &668053580
 GameObject:
   m_ObjectHideFlags: 0
