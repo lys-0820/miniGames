@@ -73,10 +73,12 @@ public class AutoMove : MonoBehaviour
                 if (horizontalDistance <= stackThreshold)
                 {
                     // success
+                    GlassManager.Instance.ActiveNextGlass();
                     isStacked = true;
                     rb.gravityScale = 0;
                     rb.velocity = Vector2.zero;
-                    transform.position = new Vector3(transform.position.x, stackTarget.transform.position.y + 1.5f, transform.position.z);
+                    //transform.position = new Vector3(transform.position.x, stackTarget.transform.position.y + 2.0f, transform.position.z);
+                    //GlassManager.Instance.ActiveNextGlass();
                     GlassManager.Instance.NotifyStacked(this);
                 }
                 else
@@ -99,6 +101,7 @@ public class AutoMove : MonoBehaviour
                 isStacked = true;
                 rb.gravityScale = 0;
                 rb.velocity = Vector2.zero;
+                GlassManager.Instance.ActiveNextGlass();
                 GlassManager.Instance.NotifyStacked(this);
             }
         }

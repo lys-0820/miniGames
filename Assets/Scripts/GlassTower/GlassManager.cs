@@ -20,7 +20,18 @@ public class GlassManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start(){
+        InitializeGlasses();
+    }
+    private void InitializeGlasses()
+    {
+        GameObject glass = glassList[2].gameObject;
+        glass.GetComponent<Collider2D>().enabled = true;
+        for (int i = 3; i < glassList.Count; i++) {
+            glassList[i].gameObject.GetComponent<Collider2D>().enabled = false;
+        }
 
+    }
     public void RegisterAutoMove(AutoMove autoMove)
     {
         autoMoves.Add(autoMove);
@@ -29,7 +40,6 @@ public class GlassManager : MonoBehaviour
     public AutoMove GetStackTarget(AutoMove current)
     {
         int index = autoMoves.IndexOf(current);
-        Debug.Log(index);
         if (index > 0)
         {
             return autoMoves[index - 1];
@@ -43,6 +53,7 @@ public class GlassManager : MonoBehaviour
         if (index == currentIndex)
         {
             currentIndex++;
+
             //TODO: change the win condition
             if (currentIndex >= 3)
             {
@@ -53,18 +64,22 @@ public class GlassManager : MonoBehaviour
         }
 
     }
-    public bool GetWinCondition()
+    public void ActiveNextGlass()
     {
-        return isWin;
+        if (currentIndex < glassList.Count-3)
+        {
+            GameObject nextGlass = glassList[currentIndex + 3].gameObject;
+            if (nextGlass != null)
+            {
+                nextGlass.GetComponent<Collider2D>().enabled = true;
+            }
+        }
     }
     public void SetWinCondition(bool win)
     {
         isWin = win;
     }
-    public bool GetGameOverCondition()
-    {
-        return isGameOver;
-    }
+
     public void SetGameOverCondition(bool gameOver)
     {
         isGameOver = gameOver;
@@ -75,7 +90,5 @@ public class GlassManager : MonoBehaviour
         }
 
     }
-    public void ResetGame(){
 
-    }
 }
