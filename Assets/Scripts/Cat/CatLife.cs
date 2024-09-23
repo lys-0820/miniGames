@@ -16,5 +16,9 @@ public class CatLife : MonoBehaviour
         _lifeAnimator.SetBool("fill", true);
     }
     
+    public void LoseLife()
+    {
+        _lifeAnimator.SetBool("lose", true);
+    }
     
 }

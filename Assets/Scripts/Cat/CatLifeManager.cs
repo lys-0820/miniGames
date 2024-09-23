@@ -10,15 +10,23 @@ public class CatLifeManager : MonoBehaviour
     private int _currentIndex = 0;
     private void Start()
     {
-        StartCoroutine(ShowLives());
+        ShowLives();
     }
 
-    private IEnumerator ShowLives()
+    private void ShowLives()
     {
         foreach (var life in _lives)
         {
             life.ShowLife();
-            yield return new WaitForSeconds(0.3f);
+            //yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    public void LoseLives()
+    {
+        foreach (var life in _lives)
+        {
+            life.LoseLife();
         }
     }
 

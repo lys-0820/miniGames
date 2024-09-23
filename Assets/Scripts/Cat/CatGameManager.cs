@@ -26,13 +26,17 @@ public class CatGameManager : MonoBehaviour
 
     [SerializeField] private bool _isDevilActive;
 
-
+    [Header("Sound Effects")] [SerializeField]
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _catPurrSound;
+    [SerializeField] private AudioClip _catSuccessSound;
+    [SerializeField] private AudioClip _catFailSound;
     public void CheckWinState(float value)
     {
         if (value > _minCorrectRange && value < _maxCorrectRange)
         {
-            Debug.Log(_catLifeManager.GetGameState());
             _catLifeManager.GainLife();
+            _audioSource.PlayOneShot(_catPurrSound);
             if (_catLifeManager.GetGameState()) GameWon();
             else StartCoroutine(ResetGameCycle());
             return;
@@ -43,18 +47,21 @@ public class CatGameManager : MonoBehaviour
     {
         Debug.Log("Game Won");
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-
+        _isDevilActive = false;
+        _audioSource.PlayOneShot(_catSuccessSound);
+        _catLifeManager.LoseLives();
         _catAnimator.SetBool("success", true);
         _timer.MarkGameAsSuccess();
     }
 
     public void GameLost()
     {
-        Debug.Log("Game Lost");
+        _audioSource.PlayOneShot(_catFailSound);
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 
         _catAnimator.SetBool("fail", true);
         _slider.gameObject.SetActive(false);
+        _isDevilActive = false;
         _timer.MarkGameAsFailure();
     }
     
@@ -87,7 +94,6 @@ public class CatGameManager : MonoBehaviour
     {
         if (_isDevilActive && Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Current Slider Value is:" + _slider.value);
             CheckWinState(_slider.value);
         }
     }
